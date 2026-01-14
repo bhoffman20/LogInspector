@@ -5,7 +5,7 @@ function preciseTime(dateTime) {
 	const timeSplit = dateTime.split('.');
 	// Date is up to milliseconds, so it could handle 3 digits of timeSplit[1], but no more.
 	const seconds = new Date(timeSplit[0]) / 1000;
-	if (timeSplit.length === 0) { return seconds; }
+	if (timeSplit.length === 1) { return seconds; }
 	const subseconds = Number(timeSplit[1]) / (10 ** timeSplit[1].length);
 	return seconds + subseconds;
 }
